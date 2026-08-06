@@ -6,7 +6,7 @@
     <title>My Trips - WanderAI</title>
     <meta
       name="description"
-      content="Your AI-generated travel photos. Relive your virtual adventures and share them with the world."
+      content="Manage your trips, view history, and get AI recommendations for your next adventure."
     />
 
     <!-- Fonts -->
@@ -56,7 +56,7 @@
             <span>Book Travel</span>
           </a>
           <a href="visualizations.html" class="nav-link active">
-            <i class="fas fa-file-alt"></i>
+            <i class="fas fa-user"></i>
             <span>My Trips</span>
           </a>
         </div>
@@ -70,151 +70,159 @@
     <!-- Main Content -->
     <main class="main-content">
       <div class="container">
-        <!-- Header Section -->
-        <div class="visualizations-header">
-          <div class="step-badge">
-            <i class="fas fa-images"></i>
-            <span>Your Gallery</span>
+        <div class="trips-layout">
+          <!-- Left Column -->
+          <div class="trips-left-column">
+            <!-- Main Heading -->
+            <h1 class="trips-main-title">My Trips</h1>
+
+            <!-- Current Trips Section -->
+            <div class="trips-section">
+              <h2 class="trips-section-title">Current Trips</h2>
+              <div class="current-trip-card">
+                <div class="trip-image">
+                  <img src="https://images.unsplash.com/photo-1502602898535-0b0c0c0c0c0c?w=400&h=250&fit=crop" alt="Paris" />
+                </div>
+                <div class="trip-content">
+                  <h3 class="trip-title">Weekend in Paris</h3>
+                  <p class="trip-dates">June 15 - June 18, 2024</p>
+                  <div class="trip-status">
+                    <span class="status-item">
+                      <i class="fas fa-plane"></i>
+                      Flights Booked
+                    </span>
+                    <span class="status-item">
+                      <i class="fas fa-bed"></i>
+                      Hotel Confirmed
+                    </span>
+                  </div>
+                  <a href="#" class="trip-link">View Details</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trip History Section -->
+            <div class="trips-section">
+              <h2 class="trips-section-title">Trip History</h2>
+              <div class="trip-history-list">
+                <div class="trip-history-item">
+                  <span class="trip-location">Kyoto, Japan</span>
+                  <span class="trip-date">March 2024</span>
+                  <a href="#" class="trip-link">View Trip</a>
+                </div>
+                <div class="trip-history-item">
+                  <span class="trip-location">Rome, Italy</span>
+                  <span class="trip-date">September 2023</span>
+                  <a href="#" class="trip-link">View Trip</a>
+                </div>
+                <div class="trip-history-item">
+                  <span class="trip-location">New York City, USA</span>
+                  <span class="trip-date">May 2023</span>
+                  <a href="#" class="trip-link">View Trip</a>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-full">View All History</button>
+            </div>
+
+            <!-- AI Recommendations Section -->
+            <div class="trips-section">
+              <h2 class="trips-section-title">AI Recommendations</h2>
+              <div class="recommendations-grid">
+                <div class="recommendation-card">
+                  <div class="recommendation-image">
+                    <i class="fas fa-image"></i>
+                  </div>
+                  <div class="recommendation-content">
+                    <h4 class="recommendation-title">Tokyo, Japan</h4>
+                    <p class="recommendation-description">For your love of vibrant cities and rich culture.</p>
+                    <a href="#" class="recommendation-link">Explore</a>
+                  </div>
+                </div>
+                <div class="recommendation-card">
+                  <div class="recommendation-image">
+                    <i class="fas fa-image"></i>
+                  </div>
+                  <div class="recommendation-content">
+                    <h4 class="recommendation-title">Amalfi Coast, Italy</h4>
+                    <p class="recommendation-description">A stunning coastline adventure awaits.</p>
+                    <a href="#" class="recommendation-link">Explore</a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
-          <h1 class="visualizations-title">My Trips</h1>
-
-          <p class="visualizations-description">
-            Your AI-generated travel photos. Relive your virtual adventures and
-            share them with the world.
-          </p>
-        </div>
-
-        <!-- Stats Section -->
-        <div class="stats-section">
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i class="fas fa-images"></i>
-              </div>
-              <div class="stat-number" id="total-visualizations">0</div>
-              <div class="stat-label">Total Visualizations</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i class="fas fa-globe"></i>
-              </div>
-              <div class="stat-number" id="countries-visited">0</div>
-              <div class="stat-label">Countries Visited</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i class="fas fa-heart"></i>
-              </div>
-              <div class="stat-number" id="this-week">0</div>
-              <div class="stat-label">This Week</div>
-            </div>
-
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i class="fas fa-calendar"></i>
-              </div>
-              <div class="stat-number" id="recent-count">0</div>
-              <div class="stat-label">This Week</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Search and Filter Section -->
-        <div class="search-filter-section">
-          <div class="search-filter-container">
-            <!-- Search Bar -->
-            <div class="search-container">
-              <i class="fas fa-search search-icon"></i>
-              <input
-                type="text"
-                id="search-input"
-                class="search-input"
-                placeholder="Search your visualizations..."
-              />
-            </div>
-
-            <!-- Filter Buttons -->
-            <div class="filter-buttons">
-              <i class="fas fa-filter filter-icon"></i>
-              <div class="filter-tabs">
-                <button class="filter-tab active" data-filter="all">
-                  <i class="fas fa-images"></i>
-                  <span>All</span>
-                </button>
-                <button class="filter-tab" data-filter="recent">
-                  <i class="fas fa-calendar"></i>
-                  <span>Recent</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Results Summary -->
-          <div class="results-summary">
-            <div class="results-count">
-              <i class="fas fa-images"></i>
-              <span id="results-count">0 visualizations found</span>
-            </div>
-            <button
-              class="clear-filters"
-              id="clear-filters"
-              style="display: none"
-            >
-              Clear filters
+          <!-- Right Column -->
+          <div class="trips-right-column">
+            <!-- Plan New Trip Button -->
+            <button class="btn btn-primary btn-large btn-full">
+              <i class="fas fa-plus"></i>
+              Plan New Trip
             </button>
-          </div>
-        </div>
 
-        <!-- Loading State -->
-        <div class="loading-state" id="loading-state">
-          <div class="loading-spinner"></div>
-          <p class="loading-text">Loading your visualizations...</p>
-        </div>
+            <!-- Traveler Profile Section -->
+            <div class="trips-section">
+              <h2 class="trips-section-title">Traveler Profile</h2>
+              <div class="profile-details">
+                <div class="profile-item">
+                  <span class="profile-label">Travel Type:</span>
+                  <span class="profile-value">Adventure, Relaxation</span>
+                </div>
+                <div class="profile-item">
+                  <span class="profile-label">Budget Range:</span>
+                  <span class="profile-value">$1,000 - $3,000</span>
+                </div>
+                <div class="profile-item">
+                  <span class="profile-label">Interests:</span>
+                  <div class="interests-tags">
+                    <span class="interest-tag tag-hiking">Hiking</span>
+                    <span class="interest-tag tag-foodie">Foodie</span>
+                    <span class="interest-tag tag-photography">Photography</span>
+                    <span class="interest-tag tag-culture">Culture</span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-full">
+                <i class="fas fa-pencil"></i>
+                Edit Profile
+              </button>
+              <p class="profile-updated">Last updated: 2 days ago</p>
+            </div>
 
-        <!-- Gallery Section -->
-        <div class="gallery-section" id="gallery-section" style="display: none">
-          <div class="gallery-grid" id="gallery-grid">
-            <!-- Visualization cards will be dynamically inserted here -->
-          </div>
-        </div>
-
-        <!-- Empty State -->
-        <div class="empty-state" id="empty-state" style="display: none">
-          <div class="empty-icon">
-            <i class="fas fa-images"></i>
-          </div>
-          <h3 class="empty-title">No visualizations found</h3>
-          <p class="empty-description" id="empty-description">
-            You haven't created any visualizations yet. Start by uploading a
-            photo and exploring destinations!
-          </p>
-          <div class="empty-actions" id="empty-actions">
-            <a href="upload.html" class="btn btn-primary"> Upload Photo </a>
-            <a href="destinations.html" class="btn btn-secondary">
-              Explore Destinations
-            </a>
-          </div>
-        </div>
-
-        <!-- Quick Actions -->
-        <div class="quick-actions" id="quick-actions" style="display: none">
-          <h3 class="quick-actions-title">Quick Actions</h3>
-          <div class="quick-actions-buttons">
-            <button class="quick-action-btn" id="download-all">
-              <i class="fas fa-download"></i>
-              <span>Download All</span>
-            </button>
-            <button class="quick-action-btn" id="share-gallery">
-              <i class="fas fa-share-alt"></i>
-              <span>Share Gallery</span>
-            </button>
-            <button class="quick-action-btn" id="view-recent">
-              <i class="fas fa-heart"></i>
-              <span>View Recent</span>
-            </button>
+            <!-- Saved Destinations Section -->
+            <div class="trips-section">
+              <h2 class="trips-section-title">Saved Destinations</h2>
+              <div class="saved-destinations-list">
+                <div class="saved-destination-item">
+                  <div class="destination-image">
+                    <i class="fas fa-image"></i>
+                  </div>
+                  <div class="destination-content">
+                    <h4 class="destination-title">Dubai, UAE</h4>
+                    <p class="destination-description">Modern marvels</p>
+                  </div>
+                </div>
+                <div class="saved-destination-item">
+                  <div class="destination-image">
+                    <i class="fas fa-image"></i>
+                  </div>
+                  <div class="destination-content">
+                    <h4 class="destination-title">Santorini, Greece</h4>
+                    <p class="destination-description">Iconic sunsets</p>
+                  </div>
+                </div>
+                <div class="saved-destination-item">
+                  <div class="destination-image">
+                    <i class="fas fa-image"></i>
+                  </div>
+                  <div class="destination-content">
+                    <h4 class="destination-title">Bali, Indonesia</h4>
+                    <p class="destination-description">Tropical paradise</p>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-secondary btn-full">View All Saved</button>
+            </div>
           </div>
         </div>
       </div>
@@ -231,43 +239,15 @@
             <span class="footer-logo-text">WanderAI</span>
           </div>
           <div class="footer-copyright">
-            © 2024 WanderAI. Made with ❤️ for travelers worldwide.
+            © 2024 WanderAI. All rights reserved.
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="lightbox">
-      <div class="lightbox-content">
-        <button class="lightbox-close" id="lightbox-close">
-          <i class="fas fa-times"></i>
-        </button>
-        <img id="lightbox-image" class="lightbox-image" alt="Visualization" />
-        <div class="lightbox-info">
-          <h3 id="lightbox-title" class="lightbox-title"></h3>
-          <p id="lightbox-location" class="lightbox-location"></p>
-          <div class="lightbox-actions">
-            <button class="lightbox-action" id="lightbox-download">
-              <i class="fas fa-download"></i>
-              Download
-            </button>
-            <button class="lightbox-action" id="lightbox-share">
-              <i class="fas fa-share-alt"></i>
-              Share
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div id="toast-container" class="toast-container"></div>
-
     <!-- Scripts -->
     <script src="js/api.js"></script>
     <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/visualizations.js"></script>
   </body>
 </html>
